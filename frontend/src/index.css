@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FA9198; /* Rosa da identidade */
+  --color-primary-dark: #E87A82;
+  --color-secondary: #FCE366; /* Amarelo da identidade */
+  --color-secondary-dark: #E5CD52;
+  
+  --font-heading: 'Lilita One', cursive;
+  --font-cursive: 'Caveat', cursive;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 bg-white;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+  }
+}
