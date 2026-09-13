@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <Heart className="h-6 w-6 text-primary" fill="currentColor" />
-              <span className="font-bold text-xl text-gray-900 tracking-tight">HOPE</span>
+              <Heart className="h-6 w-6 text-[#FA9198]" fill="currentColor" />
+              <span className="font-black text-2xl text-gray-900 tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>HOPE</span>
             </Link>
             <p className="text-gray-500 mb-6 max-w-sm">
               Plataforma de proteção e conscientização animal. Informação, histórias e pessoas que acreditam que podemos fazer a diferença.
@@ -17,21 +17,21 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Navegação</h4>
+            <h4 className="font-black text-xl text-gray-900 mb-4 tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>Navegação</h4>
             <ul className="space-y-2">
-              <li><Link to="/historias" className="text-gray-500 hover:text-primary transition-colors">Histórias</Link></li>
-              <li><Link to="/ongs" className="text-gray-500 hover:text-primary transition-colors">ONGs</Link></li>
-              <li><Link to="/mapa" className="text-gray-500 hover:text-primary transition-colors">Mapa</Link></li>
-              <li><Link to="/pergunte-ao-hope" className="text-gray-500 hover:text-primary transition-colors">Pergunte ao Hope</Link></li>
+              <li><Link to="/historias" className="text-gray-500 hover:text-[#FA9198] transition-colors">Histórias</Link></li>
+              <li><Link to="/ongs" className="text-gray-500 hover:text-[#FA9198] transition-colors">ONGs</Link></li>
+              <li><Link to="/mapa" className="text-gray-500 hover:text-[#FA9198] transition-colors">Mapa</Link></li>
+              <li><a href="https://wa.me/5511989315092" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#FA9198] transition-colors">Falar no WhatsApp</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
+            <h4 className="font-black text-xl text-gray-900 mb-4 tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>Legal</h4>
             <ul className="space-y-2">
-              <li><Link to="/privacidade" className="text-gray-500 hover:text-primary transition-colors">Política de Privacidade</Link></li>
-              <li><Link to="/termos" className="text-gray-500 hover:text-primary transition-colors">Termos de Uso</Link></li>
-              <li><Link to="/contato" className="text-gray-500 hover:text-primary transition-colors">Contato</Link></li>
+              <li><Link to="/privacidade" className="text-gray-500 hover:text-[#FA9198] transition-colors">Política de Privacidade</Link></li>
+              <li><Link to="/termos" className="text-gray-500 hover:text-[#FA9198] transition-colors">Termos de Uso</Link></li>
+              <li><Link to="/contato" className="text-gray-500 hover:text-[#FA9198] transition-colors">Contato</Link></li>
             </ul>
           </div>
         </div>

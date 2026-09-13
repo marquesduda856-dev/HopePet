@@ -5,27 +5,30 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-white pb-16">
+      <section className="relative pb-16 pt-20">
         {/* Banner Principal (Largura Total) */}
-        <div className="w-full relative shadow-2xl hover:shadow-3xl transition-shadow duration-500">
-          <img 
-            src="/banner.png" 
-            alt="HOPE Banner Principal" 
-            className="w-full h-[60vh] md:h-[75vh] lg:h-[85vh] object-cover object-center" 
-            onError={(e) => { e.target.style.display='none'; }} 
-          />
+        <div className="w-full relative shadow-lg">
+          <picture>
+            <source media="(max-width: 768px)" srcSet="/banner-mobile.png" />
+            <img 
+              src="/banner.png" 
+              alt="HOPE Banner Principal" 
+              className="w-full h-auto sm:h-[75vh] lg:h-[85vh] sm:object-cover sm:object-center" 
+              onError={(e) => { e.target.style.display='none'; }} 
+            />
+          </picture>
         </div>
 
         {/* Botões */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md sm:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8 z-10">
-            <Link to="/ongs" className="bg-[#FA9198] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#E87A82] transition-all shadow-lg hover:-translate-y-1">
+            <Link to="/ongs" className="w-full sm:w-auto bg-[#FA9198] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#E87A82] transition-all shadow-lg hover:-translate-y-1 text-center flex items-center justify-center">
               Encontre Ajuda
             </Link>
-            <Link to="/pergunte-ao-hope" className="bg-white text-[#FA9198] border-2 border-[#FA9198] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center gap-2 hover:-translate-y-1">
+            <a href="https://wa.me/5511989315092" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white text-[#FA9198] border-2 border-[#FA9198] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center gap-2 hover:-translate-y-1">
               <MessageCircle className="h-5 w-5" />
-              Falar com o Hope
-            </Link>
+              Falar no WhatsApp
+            </a>
           </div>
         </div>
       </section>
@@ -118,28 +121,30 @@ function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto relative">
-      <div className="relative flex items-center">
-        <Mail className="absolute left-4 text-gray-400 h-5 w-5" />
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Seu melhor e-mail"
-          className="w-full pl-12 pr-40 py-4 rounded-full border-none focus:ring-4 focus:ring-white/30 text-gray-900 text-lg outline-none shadow-lg"
-          disabled={status === 'loading'}
-        />
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto relative">
+      <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <div className="relative w-full">
+          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Seu melhor e-mail"
+            className="w-full pl-12 pr-4 py-4 rounded-full border-none focus:ring-4 focus:ring-white/30 text-gray-900 text-lg outline-none shadow-lg"
+            disabled={status === 'loading'}
+          />
+        </div>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className={`absolute right-1.5 top-1.5 bottom-1.5 bg-gray-900 text-white px-6 rounded-full font-bold hover:bg-black transition-colors ${status === 'loading' ? 'opacity-70' : ''}`}
+          className={`w-full sm:w-auto bg-gray-900 text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors whitespace-nowrap shadow-lg ${status === 'loading' ? 'opacity-70' : ''}`}
         >
           {status === 'loading' ? 'Enviando...' : 'Quero fazer parte'}
         </button>
       </div>
       {status === 'error' && (
-        <p className="text-red-200 mt-3 font-medium bg-red-900/20 py-2 px-4 rounded-full inline-block">{message}</p>
+        <p className="text-red-200 mt-4 font-medium bg-red-900/20 py-2 px-4 rounded-full inline-block">{message}</p>
       )}
     </form>
   );

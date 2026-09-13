@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+    <nav className="fixed top-3 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 z-50 bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-full transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -47,12 +47,11 @@ export default function Navbar() {
                 </svg>
               </button>
             </form>
-
-            <Link to="/pergunte-ao-hope" className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-full font-medium flex items-center gap-2 transition-all text-sm">
+            <a href="https://wa.me/5511989315092" target="_blank" rel="noopener noreferrer" className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-full font-medium flex items-center gap-2 transition-all text-sm">
               <MessageCircle className="h-4 w-4" />
-              <span className="hidden lg:inline">Pergunte ao Hope</span>
-              <span className="lg:hidden">Hope</span>
-            </Link>
+              <span className="hidden lg:inline">Falar no WhatsApp</span>
+              <span className="lg:hidden">WhatsApp</span>
+            </a>
           </div>
 
           <div className="flex items-center md:hidden">
@@ -71,7 +70,7 @@ export default function Navbar() {
           <Link to="/ongs" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">ONGs</Link>
           <Link to="/mapa" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Mapa</Link>
           <Link to="/encontrou-animal" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Encontrou um animal?</Link>
-          <Link to="/pergunte-ao-hope" className="block px-3 py-2 rounded-md text-base font-medium text-primary bg-primary/10 hover:bg-primary/20">Pergunte ao Hope</Link>
+          <a href="https://wa.me/5511989315092" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-base font-medium text-primary bg-primary/10 hover:bg-primary/20">Falar no WhatsApp</a>
         </div>
       )}
     </nav>

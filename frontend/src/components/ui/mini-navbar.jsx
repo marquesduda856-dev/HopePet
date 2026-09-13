@@ -19,32 +19,10 @@ const AnimatedNavLink = ({ href, children }) => {
 
 export function MiniNavbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [headerShapeClass, setHeaderShapeClass] = useState('rounded-full');
-  const shapeTimeoutRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    if (shapeTimeoutRef.current) {
-      clearTimeout(shapeTimeoutRef.current);
-    }
-
-    if (isOpen) {
-      setHeaderShapeClass('rounded-2xl');
-    } else {
-      shapeTimeoutRef.current = setTimeout(() => {
-        setHeaderShapeClass('rounded-full');
-      }, 300);
-    }
-
-    return () => {
-      if (shapeTimeoutRef.current) {
-        clearTimeout(shapeTimeoutRef.current);
-      }
-    };
-  }, [isOpen]);
 
   const logoElement = (
     <Link to="/" className="flex items-center gap-2">
@@ -65,10 +43,10 @@ export function MiniNavbar() {
   const askHopeButtonElement = (
     <div className="relative group w-full sm:w-auto">
        <div className="absolute inset-0 -m-2 rounded-full hidden sm:block bg-[#FA9198] opacity-20 filter blur-lg pointer-events-none transition-all duration-300 ease-out group-hover:opacity-40 group-hover:blur-xl group-hover:-m-3"></div>
-       <Link to="/pergunte-ao-hope" className="relative z-10 px-4 py-2 sm:px-4 text-xs sm:text-sm font-bold text-[#FA9198] bg-white border-2 border-[#FA9198] rounded-full hover:bg-pink-50 transition-all duration-200 w-full sm:w-auto flex items-center justify-center gap-2">
+       <a href="https://wa.me/5511989315092" target="_blank" rel="noopener noreferrer" className="relative z-10 px-4 py-2 sm:px-4 text-xs sm:text-sm font-bold text-[#FA9198] bg-white border-2 border-[#FA9198] rounded-full hover:bg-pink-50 transition-all duration-200 w-full sm:w-auto flex items-center justify-center gap-2">
          <MessageCircle className="w-4 h-4" />
-         Falar com o Hope
-       </Link>
+         Falar no WhatsApp
+       </a>
     </div>
   );
 
@@ -76,10 +54,9 @@ export function MiniNavbar() {
     <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50
                        flex flex-col items-center
                        px-4 py-3 
-                       ${headerShapeClass}
+                       rounded-3xl
                        backdrop-blur-xl bg-white/40 border border-white/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]
-                       w-[calc(100%-2rem)] max-w-4xl sm:w-auto
-                       transition-[border-radius] duration-300 ease-in-out`}>
+                       w-[calc(100%-2rem)] max-w-4xl sm:w-auto`}>
 
       <div className="flex items-center justify-between w-full gap-x-6 sm:gap-x-12">
         <div className="flex items-center">

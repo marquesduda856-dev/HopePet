@@ -46,8 +46,8 @@ export default function Mapa() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Encontre ajuda perto de você</h1>
-          <p className="mt-2 text-lg text-gray-600">Explore o mapa para encontrar abrigos e ONGs na sua região.</p>
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>Encontre ajuda perto de você</h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-600">Explore o mapa para encontrar abrigos e ONGs na sua região.</p>
         </div>
 
         {error && (
@@ -56,10 +56,10 @@ export default function Mapa() {
           </div>
         )}
 
-        <div className="bg-white rounded-3xl p-4 md:p-6 shadow-sm border border-gray-100 mb-8">
+        <div className="bg-white rounded-3xl p-4 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50 mb-8">
           {loading ? (
             <div className="flex justify-center items-center h-[500px]">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FA9198]"></div>
             </div>
           ) : (
             <div className="h-[500px] w-full rounded-2xl overflow-hidden relative z-0 border border-gray-200">
@@ -99,7 +99,7 @@ export default function Mapa() {
                             </a>
                           )}
                           {local.site && (
-                            <a href={local.site.startsWith('http') ? local.site : `https://${local.site}`} target="_blank" rel="noopener noreferrer" className="text-primary text-sm flex items-center hover:underline">
+                            <a href={local.site.startsWith('http') ? local.site : `https://${local.site}`} target="_blank" rel="noopener noreferrer" className="text-[#FA9198] text-sm flex items-center hover:underline font-bold">
                               <Link2 className="h-3 w-3 mr-1" /> Visitar site
                             </a>
                           )}

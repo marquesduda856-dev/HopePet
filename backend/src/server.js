@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import historiasRoutes from './routes/historias.js';
 import ongsRoutes from './routes/ongs.js';
 import newsletterRoutes from './routes/newsletter.js';
-import chatRoutes from './routes/chat.js';
+
 import buscaRoutes from './routes/busca.js';
 import contatoRoutes from './routes/contato.js';
 
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use('/api/historias', historiasRoutes);
 app.use('/api/ongs', ongsRoutes);
 app.use('/api/newsletter', newsletterRoutes);
-app.use('/api/chat', chatRoutes);
+
 app.use('/api/busca', buscaRoutes);
 app.use('/api/contato', contatoRoutes);
 

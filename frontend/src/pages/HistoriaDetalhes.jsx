@@ -68,14 +68,14 @@ export default function HistoriaDetalhes() {
   return (
     <div className="bg-gray-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/historias" className="inline-flex items-center text-gray-500 hover:text-primary mb-8 transition-colors">
+        <Link to="/historias" className="inline-flex items-center text-gray-500 hover:text-[#FA9198] font-bold mb-8 transition-colors">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Voltar para histórias
         </Link>
         
         {/* História */}
-        <article className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 mb-8">
-          <div className="flex items-center text-gray-500 text-sm mb-4">
+        <article className="bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50 mb-10">
+          <div className="flex items-center text-gray-500 text-sm mb-6">
             <MapPin className="h-4 w-4 mr-1" />
             {historia.cidade}
             <span className="mx-2">•</span>
@@ -83,10 +83,10 @@ export default function HistoriaDetalhes() {
             {historia.nome || 'Anônimo'}
           </div>
           
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-8">{historia.titulo}</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-8" style={{ fontFamily: 'var(--font-heading)' }}>{historia.titulo}</h1>
           
           {historia.fotos && historia.fotos.length > 0 && (
-            <img src={historia.fotos[0]} alt={historia.titulo} className="w-full h-auto rounded-2xl mb-8" />
+            <img src={historia.fotos[0]} alt={historia.titulo} className="w-full h-auto rounded-3xl mb-8 shadow-sm" />
           )}
 
           <div className="prose prose-lg text-gray-700 max-w-none whitespace-pre-wrap leading-relaxed">
@@ -95,39 +95,39 @@ export default function HistoriaDetalhes() {
         </article>
 
         {/* Seção de Comentários */}
-        <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Comentários ({comentarios.length})</h3>
+        <section className="bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8" style={{ fontFamily: 'var(--font-heading)' }}>Comentários ({comentarios.length})</h3>
           
           {/* Formulário de Comentário */}
-          <form onSubmit={handleComentarioSubmit} className="mb-10 bg-gray-50 p-6 rounded-2xl">
-            <div className="mb-4">
-              <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">Seu Nome</label>
+          <form onSubmit={handleComentarioSubmit} className="mb-12 bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div className="mb-6">
+              <label htmlFor="nome" className="block text-sm font-bold text-gray-700 mb-2">Seu Nome</label>
               <input
                 type="text"
                 id="nome"
                 required
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
-                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                className="w-full px-5 py-4 rounded-full border border-gray-200 focus:ring-2 focus:ring-[#FA9198]/20 focus:border-[#FA9198] outline-none transition-all bg-white"
                 placeholder="Como quer ser chamado?"
               />
             </div>
-            <div className="mb-4">
-              <label htmlFor="comentario" className="block text-sm font-medium text-gray-700 mb-1">Comentário</label>
+            <div className="mb-6">
+              <label htmlFor="comentario" className="block text-sm font-bold text-gray-700 mb-2">Comentário</label>
               <textarea
                 id="comentario"
                 required
-                rows="3"
+                rows="4"
                 value={comentarioTexto}
                 onChange={(e) => setComentarioTexto(e.target.value)}
-                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                className="w-full px-5 py-4 rounded-3xl border border-gray-200 focus:ring-2 focus:ring-[#FA9198]/20 focus:border-[#FA9198] outline-none transition-all resize-none bg-white"
                 placeholder="Deixe uma mensagem amigável..."
               ></textarea>
             </div>
             <button
               type="submit"
               disabled={enviandoComentario}
-              className={`bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-all ${enviandoComentario ? 'opacity-70' : ''}`}
+              className={`bg-[#FA9198] text-white px-8 py-3 rounded-full font-bold hover:bg-[#F87C85] transition-all shadow-md ${enviandoComentario ? 'opacity-70 cursor-not-allowed' : 'hover:-translate-y-1 hover:shadow-lg'}`}
             >
               {enviandoComentario ? 'Enviando...' : 'Enviar comentário'}
             </button>
