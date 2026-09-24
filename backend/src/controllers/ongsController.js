@@ -120,28 +120,63 @@ export const getOngs = async (req, res) => {
         instagram: '@caovivermg', site: 'caoviver.com.br', telefone: '(31) 99999-0020', imagem: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -19.9213, longitude: -43.9538
       }
+      {
+        id: 21, nome: 'UIPA (União Internacional Protetora dos Animais)', cidade: 'São Paulo', estado: 'SP', descricao: 'A mais antiga ONG de proteção animal do Brasil.',
+        instagram: '@uipasp', site: 'uipa.org.br', telefone: '(11) 3228-1462', imagem: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5255, longitude: -46.6190
+      },
+      {
+        id: 22, nome: 'Clube dos Vira-Latas', cidade: 'Ribeirão Pires', estado: 'SP', descricao: 'Maior ONG de cuidado e adoção de cães do Brasil.',
+        instagram: '@clubedosviralatas', site: 'clubedosviralatas.org.br', telefone: '(11) 99999-0022', imagem: 'https://images.unsplash.com/photo-1593483316242-efb5420596ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.7122, longitude: -46.4188
+      },
+      {
+        id: 23, nome: 'Adote um Gatinho', cidade: 'São Paulo', estado: 'SP', descricao: 'Maior projeto de resgate e adoção de gatos do Brasil.',
+        instagram: '@adoteumgatinho', site: 'adoteumgatinho.com.br', telefone: '(11) 99999-0023', imagem: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5510, longitude: -46.6340
+      },
+      {
+        id: 24, nome: 'Catland', cidade: 'São Paulo', estado: 'SP', descricao: 'Focada no resgate, conscientização e adoção de gatinhos em SP.',
+        instagram: '@catlandrescue', site: 'catland.org.br', telefone: '(11) 99999-0024', imagem: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5890, longitude: -46.6320
+      },
+      {
+        id: 25, nome: 'Cão Sem Dono', cidade: 'Itapecerica da Serra', estado: 'SP', descricao: 'Tirando animais das ruas, cuidando e dando amor.',
+        instagram: '@caosemdono.oficial', site: 'caosemdono.com.br', telefone: '(11) 99999-0025', imagem: 'https://images.unsplash.com/photo-1537151608804-ea2f1fa50257?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.7130, longitude: -46.8500
+      },
+      {
+        id: 26, nome: 'Associação Natureza em Forma', cidade: 'São Paulo', estado: 'SP', descricao: 'Centro de adoção e cuidados no coração de São Paulo.',
+        instagram: '@naturezaemforma', site: 'naturezaemforma.org.br', telefone: '(11) 99999-0026', imagem: 'https://images.unsplash.com/photo-1505628346881-b72b27e84530?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5530, longitude: -46.6450
+      },
+      {
+        id: 27, nome: 'Abrigo Piccolina', cidade: 'Avaré', estado: 'SP', descricao: 'Abrigo e proteção para cães abandonados no interior paulista.',
+        instagram: '@abrigopiccolina', site: 'abrigopiccolina.org.br', telefone: '(14) 99999-0027', imagem: 'https://images.unsplash.com/photo-1598133894008-61f7fec814cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.1000, longitude: -48.9200
+      },
+      {
+        id: 28, nome: 'Confraria dos Miados e Latidos', cidade: 'São Paulo', estado: 'SP', descricao: 'Pioneiros em CED (Captura, Esterilização e Devolução).',
+        instagram: '@miadoselatidos', site: 'miadoselatidos.org.br', telefone: '(11) 99999-0028', imagem: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5200, longitude: -46.6200
+      },
+      {
+        id: 29, nome: 'Focinho Abandonado', cidade: 'São Paulo', estado: 'SP', descricao: 'Resgate, reabilitação e busca por novas famílias.',
+        instagram: '@focinhoabandonado', site: '', telefone: '(11) 99999-0029', imagem: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.5900, longitude: -46.6800
+      },
+      {
+        id: 30, nome: 'Instituto Luisa Mell (Instituto Caramelo)', cidade: 'São Paulo', estado: 'SP', descricao: 'Atuação forte em resgates de grandes proporções e conscientização.',
+        instagram: '@institutoluisamell', site: 'ilm.org.br', telefone: '(11) 99999-0030', imagem: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        latitude: -23.6100, longitude: -46.6200
+      }
     ];
 
-    const mockOngs = [];
-    // Gerar 150 ONGs clonando as base com pequenas alterações geográficas para preencher o mapa sem travar
-    for (let i = 0; i < 150; i++) {
-      const base = baseOngs[i % baseOngs.length];
-      mockOngs.push({
-        ...base,
-        id: i + 1,
-        nome: `${base.nome} #${i + 1}`,
-        // (Math.random() - 0.5) * 4 varia a latitude levemente para Norte/Sul
-        latitude: base.latitude + (Math.random() - 0.5) * 4,
-        // Ao subtrair (Math.random() * 8), forçamos os pins para o OESTE (para dentro do continente), evitando o Oceano Atlântico
-        longitude: base.longitude - Math.random() * 8
-      });
-    }
-    
     const { cidade } = req.query;
     if (cidade) {
-      res.json(mockOngs.filter(o => o.cidade.toLowerCase().includes(cidade.toLowerCase())));
+      res.json(baseOngs.filter(o => o.cidade.toLowerCase().includes(cidade.toLowerCase())));
     } else {
-      res.json(mockOngs);
+      res.json(baseOngs);
     }
   }
 };
