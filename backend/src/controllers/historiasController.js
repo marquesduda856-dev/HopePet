@@ -1,4 +1,5 @@
 import { supabase } from '../config/supabase.js';
+import xss from 'xss';
 
 // Mock de banco de dados em memória para quando o Supabase estiver off
 let mockHistoriasDB = [
@@ -65,10 +66,16 @@ export const createHistoria = async (req, res) => {
   try {
     const { nome, cidade, titulo, historia } = req.body;
     
+    // Sanitize inputs
+    const cleanNome = xss(nome);
+    const cleanCidade = xss(cidade);
+    const cleanTitulo = xss(titulo);
+    const cleanHistoria = xss(historia);
+    
     // Insere no banco
     const { data, error } = await supabase
       .from('historias')
-      .insert([{ nome, cidade, titulo, historia }])
+      .insert([{ nome: cleanNome, cidade: cleanCidade, titulo: cleanTitulo, historia: cleanHistoria }])
       .select();
 
     if (error) throw error;
@@ -82,10 +89,10 @@ export const createHistoria = async (req, res) => {
     
     const novaHistoria = {
       id: Date.now(), // ID fake baseado no timestamp
-      nome,
-      cidade,
-      titulo,
-      historia,
+      nome: cleanNome,
+      cidade: cleanCidade,
+      titulo: cleanTitulo,
+      historia: cleanHistoria,
       fotos: ['https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'], // Foto genérica
       created_at: new Date().toISOString()
     };
@@ -121,9 +128,12 @@ export const createComentario = async (req, res) => {
     const { historiaId } = req.params;
     const { nome, comentario } = req.body;
     
+    const cleanNome = xss(nome);
+    const cleanComentario = xss(comentario);
+    
     const { data, error } = await supabase
       .from('comentarios')
-      .insert([{ historia_id: historiaId, nome, comentario }])
+      .insert([{ historia_id: historiaId, nome: cleanNome, comentario: cleanComentario }])
       .select();
 
     if (error) throw error;

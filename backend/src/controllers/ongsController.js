@@ -47,7 +47,7 @@ export const getOngs = async (req, res) => {
       },
       {
         id: 6, nome: 'Abrigo dos Bichos', cidade: 'Campo Grande', estado: 'MS', descricao: 'Resgate, reabilitação e busca de novos lares para animais vítimas de maus tratos.',
-        instagram: '@abrigodosbichosms', site: 'abrigodosbichos.org.br', telefone: '(67) 99999-0006', imagem: 'https://images.unsplash.com/photo-1598133894008-61f7fec814cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        instagram: '@abrigodosbichosms', site: 'abrigodosbichos.org.br', telefone: '(67) 99999-0006', imagem: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -20.4428, longitude: -54.6464
       },
       {
@@ -57,7 +57,7 @@ export const getOngs = async (req, res) => {
       },
       {
         id: 8, nome: 'Adote um Focinho', cidade: 'Curitiba', estado: 'PR', descricao: 'Amor e cuidado para cachorros resgatados esperando uma família.',
-        instagram: '@adoteumfocinhopr', site: '', telefone: '(41) 99999-0008', imagem: 'https://images.unsplash.com/photo-1537151608804-ea2f1fa50257?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        instagram: '@adoteumfocinhopr', site: '', telefone: '(41) 99999-0008', imagem: 'https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -25.4284, longitude: -49.2733
       },
       {
@@ -119,7 +119,7 @@ export const getOngs = async (req, res) => {
         id: 20, nome: 'Cão Viver', cidade: 'Belo Horizonte', estado: 'MG', descricao: 'Construindo laços de amor entre animais resgatados e humanos.',
         instagram: '@caovivermg', site: 'caoviver.com.br', telefone: '(31) 99999-0020', imagem: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -19.9213, longitude: -43.9538
-      }
+      },
       {
         id: 21, nome: 'UIPA (União Internacional Protetora dos Animais)', cidade: 'São Paulo', estado: 'SP', descricao: 'A mais antiga ONG de proteção animal do Brasil.',
         instagram: '@uipasp', site: 'uipa.org.br', telefone: '(11) 3228-1462', imagem: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
@@ -142,7 +142,7 @@ export const getOngs = async (req, res) => {
       },
       {
         id: 25, nome: 'Cão Sem Dono', cidade: 'Itapecerica da Serra', estado: 'SP', descricao: 'Tirando animais das ruas, cuidando e dando amor.',
-        instagram: '@caosemdono.oficial', site: 'caosemdono.com.br', telefone: '(11) 99999-0025', imagem: 'https://images.unsplash.com/photo-1537151608804-ea2f1fa50257?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        instagram: '@caosemdono.oficial', site: 'caosemdono.com.br', telefone: '(11) 99999-0025', imagem: 'https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -23.7130, longitude: -46.8500
       },
       {
@@ -152,7 +152,7 @@ export const getOngs = async (req, res) => {
       },
       {
         id: 27, nome: 'Abrigo Piccolina', cidade: 'Avaré', estado: 'SP', descricao: 'Abrigo e proteção para cães abandonados no interior paulista.',
-        instagram: '@abrigopiccolina', site: 'abrigopiccolina.org.br', telefone: '(14) 99999-0027', imagem: 'https://images.unsplash.com/photo-1598133894008-61f7fec814cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        instagram: '@abrigopiccolina', site: 'abrigopiccolina.org.br', telefone: '(14) 99999-0027', imagem: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         latitude: -23.1000, longitude: -48.9200
       },
       {
