@@ -40,7 +40,8 @@ export default function EnviarHistoria() {
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-4">
         <div className="bg-emerald-50 text-emerald-700 p-8 rounded-3xl max-w-md text-center border border-emerald-100">
           <h2 className="text-2xl font-bold mb-2">História enviada! 💛</h2>
-          <p>Obrigado por compartilhar. Você será redirecionado em instantes.</p>
+          <p>Obrigado por compartilhar. Sua história passará por uma rápida análise e logo estará na plataforma!</p>
+          <p className="text-sm opacity-80 mt-2">Você será redirecionado em instantes.</p>
         </div>
       </div>
     );

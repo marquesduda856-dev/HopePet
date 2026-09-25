@@ -10,6 +10,7 @@ let mockHistoriasDB = [
     titulo: 'O resgate do pequeno Thor',
     historia: 'Encontrei o Thor em uma noite chuvosa deitado embaixo de um carro antigo. Ele estava muito assustado, magro e com frio. Demorou horas para ganhar a confiança dele, mas com a ajuda de um petisco, ele finalmente cedeu.\n\nLevei ao veterinário, tratamos as pulgas e hoje, 2 anos depois, é o cachorro mais feliz do mundo e a verdadeira alegria da casa!',
     fotos: ['https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'],
+    status: 'aprovada',
     created_at: new Date().toISOString()
   },
   {
@@ -19,6 +20,7 @@ let mockHistoriasDB = [
     titulo: 'Mia: de gata de rua a rainha da casa',
     historia: 'A Mia me adotou, na verdade. Ela apareceu na minha porta e nunca mais foi embora. O amor mais puro!',
     fotos: ['https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'],
+    status: 'aprovada',
     created_at: new Date().toISOString()
   }
 ];
@@ -28,14 +30,17 @@ export const getHistorias = async (req, res) => {
     const { data, error } = await supabase
       .from('historias')
       .select('*')
+      .eq('status', 'aprovada')
       .order('created_at', { ascending: false });
 
     if (error) throw error;
     res.json(data);
   } catch (error) {
     console.log('Erro ao buscar histórias no Supabase, retornando mock data:', error.message);
-    // Ordena do mais novo pro mais antigo
-    const sortedMock = [...mockHistoriasDB].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    // Ordena do mais novo pro mais antigo e filtra apenas as aprovadas
+    const sortedMock = mockHistoriasDB
+      .filter(h => h.status === 'aprovada')
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
     res.json(sortedMock);
   }
 };
@@ -72,10 +77,10 @@ export const createHistoria = async (req, res) => {
     const cleanTitulo = xss(titulo);
     const cleanHistoria = xss(historia);
     
-    // Insere no banco
+    // Insere no banco com status pendente
     const { data, error } = await supabase
       .from('historias')
-      .insert([{ nome: cleanNome, cidade: cleanCidade, titulo: cleanTitulo, historia: cleanHistoria }])
+      .insert([{ nome: cleanNome, cidade: cleanCidade, titulo: cleanTitulo, historia: cleanHistoria, status: 'pendente' }])
       .select();
 
     if (error) throw error;
@@ -94,6 +99,7 @@ export const createHistoria = async (req, res) => {
       titulo: xss(titulo),
       historia: xss(historia),
       fotos: ['https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'], // Foto genérica
+      status: 'pendente',
       created_at: new Date().toISOString()
     };
     
