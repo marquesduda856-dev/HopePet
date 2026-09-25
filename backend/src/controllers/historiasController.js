@@ -89,10 +89,10 @@ export const createHistoria = async (req, res) => {
     
     const novaHistoria = {
       id: Date.now(), // ID fake baseado no timestamp
-      nome: cleanNome,
-      cidade: cleanCidade,
-      titulo: cleanTitulo,
-      historia: cleanHistoria,
+      nome: xss(nome),
+      cidade: xss(cidade),
+      titulo: xss(titulo),
+      historia: xss(historia),
       fotos: ['https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'], // Foto genérica
       created_at: new Date().toISOString()
     };
