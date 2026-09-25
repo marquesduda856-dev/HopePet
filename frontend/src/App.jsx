@@ -20,10 +20,15 @@ import Conscientizacao from './pages/Conscientizacao';
 import Comunidade from './pages/Comunidade';
 
 import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="flex flex-col min-h-screen">
